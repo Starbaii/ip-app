@@ -5,7 +5,7 @@ from rich.table import Table
 def get_ip_info():
     """Fetch public IP information from ipinfo.io."""
     try:
-        # ipinfo.io free endpoint (no API key required for basic usage)
+        # ipinfo.io free endpoint (no API key required for basic usage)  
         response = requests.get("https://ipinfo.io/json", timeout=10)
         response.raise_for_status()
         return response.json()
