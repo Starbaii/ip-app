@@ -2,6 +2,7 @@ import requests
 from rich.console import Console
 from rich.table import Table
 
+
 def get_ip_info():
     """Fetch public IP information from ipinfo.io."""
     try:
@@ -12,6 +13,7 @@ def get_ip_info():
         print(f"Error fetching IP info: {e}")
         return None
 
+
 def display_ip_info(data):
     """Display IP information in a formatted table."""  
     if not data:
@@ -19,7 +21,8 @@ def display_ip_info(data):
         return
 
     console = Console()
-    table = Table(title="Public IP Information", show_header=True, header_style="bold magenta")
+    table = Table(title="Public IP Information", show_header=True,
+                  header_style="bold magenta")
 
     table.add_column("Field", style="cyan", width=20)
     table.add_column("Value", style="green")
@@ -39,6 +42,7 @@ def display_ip_info(data):
         table.add_row(field, str(value))
 
     console.print(table)
+
 
 if __name__ == "__main__":
     print("Fetching your public IP information...\n")
