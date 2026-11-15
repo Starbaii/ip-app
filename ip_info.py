@@ -5,7 +5,6 @@ from rich.table import Table
 def get_ip_info():
     """Fetch public IP information from ipinfo.io."""
     try:
-        # ipinfo.io free endpoint (no API key required for basic usage)
         response = requests.get("https://ipinfo.io/json", timeout=10)
         response.raise_for_status()
         return response.json()
@@ -14,7 +13,7 @@ def get_ip_info():
         return None
 
 def display_ip_info(data):
-    """Display IP information in a formatted table."""
+    """Display IP information in a formatted table."""  
     if not data:
         print("No data to display.")
         return
@@ -25,7 +24,6 @@ def display_ip_info(data):
     table.add_column("Field", style="cyan", width=20)
     table.add_column("Value", style="green")
 
-    # Updated fields for ipinfo.io API
     fields = [
         ("IP Address", data.get("ip", "N/A")),
         ("City", data.get("city", "N/A")),
