@@ -18,5 +18,5 @@ def test_display_ip_info_runs(capsys):
     
     captured = capsys.readouterr()
     
-    assert "THIS_WILL_FAIL" in captured.out
+    assert "8.8.8.8" in captured.out
     assert "Mountain View" in captured.out
