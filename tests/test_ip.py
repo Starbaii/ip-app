@@ -3,7 +3,6 @@ import pytest
 from ip_info import display_ip_info
 
 def test_display_ip_info_runs(capsys):
-    # Dummy data that mimics what the API would return
     test_data = {
         "ip": "8.8.8.8",
         "city": "Mountain View",
@@ -15,12 +14,9 @@ def test_display_ip_info_runs(capsys):
         "org": "Google LLC"
     }
     
-    # Run the function from your main script
     display_ip_info(test_data)
     
-    # Capture what was printed to the console
     captured = capsys.readouterr()
     
-    # Check if the output contains the expected data
-    assert "8.8.8.8" in captured.out
+    assert "THIS_WILL_FAIL" in captured.out
     assert "Mountain View" in captured.out
